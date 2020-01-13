@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Graph Searches}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{blocs}{5}{0}{1}
+\beamer@sectionintoc {2}{Section no. 5}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{split screen}{6}{0}{2}

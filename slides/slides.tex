@@ -1,0 +1,115 @@
+\documentclass{beamer}
+\setbeamertemplate{navigation symbols}{}
+
+
+\usetheme{Warsaw}
+
+\beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
+\begin{document}
+\title{LexBFS and its applications}  
+\author{Guillaume Aubian}
+\date{\today} 
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}\frametitle{Overview}\tableofcontents
+\end{frame} 
+
+
+\section{Graph Searches} 
+\begin{frame}\frametitle{Generic Search}
+    \begin{definition}
+        Start from some vertex. Visit vertices among neighbours of already visited vertices, until every vertex is visited.
+    \end{definition}
+    INCLUDE GRAPH EXAMPLE
+\end{frame}
+
+\begin{frame}\frametitle{Another Characterization}
+    Let's number vertices in the order there are visited.
+    \begin{definition}
+       An order $\sigma$ corresponds to a LexBFS if and only if
+    \end{definition}
+    INCLUDE DRAWING
+\end{frame}
+
+
+
+\begin{frame}\frametitle{blocs}
+
+\begin{block}{title of the bloc}
+bloc text
+\end{block}
+
+\begin{exampleblock}{title of the bloc}
+bloc text
+\end{exampleblock}
+
+
+\begin{alertblock}{title of the bloc}
+bloc text
+\end{alertblock}
+\end{frame}
+
+\section{Section no. 5}
+\subsection{split screen}
+
+\begin{frame}\frametitle{splitting screen}
+\begin{columns}
+\begin{column}{5cm}
+\begin{itemize}
+\item Beamer 
+\item Beamer Class 
+\item Beamer Class Latex 
+\end{itemize}
+\end{column}
+\begin{column}{5cm}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Instructor} & \textbf{Title} \\
+\hline
+Sascha Frank &  \LaTeX \ Course 1 \\
+\hline
+Sascha Frank &  Course serial  \\
+\hline
+\end{tabular}
+\end{column}
+\end{columns}
+\end{frame}
+
+%\subsection{Pictures} 
+%\begin{frame}\frametitle{pictures in latex beamer class}
+%\begin{figure}
+%\includegraphics[scale=0.5]{PIC1} 
+%\caption{show an example picture}
+%\end{figure}
+%\end{frame}
+
+\subsection{joining picture and lists} 
+
+%\begin{frame}
+%\frametitle{pictures and lists in beamer class}
+%\begin{columns}
+%\begin{column}{5cm}
+%\begin{itemize}
+%\item<1-> subject 1
+%\item<3-> subject 2
+%\item<5-> subject 3
+%\end{itemize}
+%\vspace{3cm} 
+%\end{column}
+%\begin{column}{5cm}
+%\begin{overprint}
+%\includegraphics<2>{PIC1}
+%\includegraphics<4>{PIC2}
+%\includegraphics<6>{PIC3}
+%\end{overprint}
+%\end{column}
+%\end{columns}
+%\end{frame}
+
+
+
+\end{document}
