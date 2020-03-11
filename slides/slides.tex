@@ -380,9 +380,9 @@
 	\draw (7,0) node[circle, fill=black]{} ;
 	\draw (8,0) node[circle, fill=black]{} ;
 
-	\draw [->,dashed] (6,0) -- (6.9,0.9) ;
+	\draw [->,dashed] (6,0) -- (6.8,0.8) ;
 	\draw [->,dashed] (7,0) -- (7,0.8) ;
-	\draw [->,dashed] (8,0) -- (7.1,0.9) ;
+	\draw [->,dashed] (8,0) -- (7.2,0.8) ;
 
 	\draw [<-,dashed,red] (6,0.2) -- (6.8,0.9) ;
 	\draw [<-,dashed,red] (8,0.2) -- (7.2,0.9) ;
@@ -411,5 +411,87 @@
     \end{center}
 
 \end{frame} 
+
+\begin{frame}\frametitle{Some remarks}
+    \begin{block}{Complexity}
+	\begin{itemize}
+	    \item Each step is $O(deg_{v})$
+            \item Thus, LexBFS is linear
+	    \item co-LexBFS is linear
+	\end{itemize}
+    \end{block}
+    \begin{alertblock}{LexDFS}
+	As of 2019, no known linear-time for LexDFS
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}\frametitle{Chordal Graph}
+
+\begin{columns}[T] % align columns
+\begin{column}{.48\textwidth}
+
+	\begin{block}{Chordal Graph}
+		A graph is chordal if all cycles of four or more vertices have an edge that is not part of the cycle but connects two of its vertices.
+	\end{block}
+
+\end{column}%
+\hfill%
+\begin{column}{.48\textwidth}
+
+	\begin{block}{Perfect Elimination Ordering (=PEO)}
+	$\sigma$ is a PEO if for each vertex v, v and its neighbours occuring after v in $\sigma$ form a clique.
+	\end{block}
+
+	\begin{block}{Chordal Graph}
+		A graph is chordal if it admits a perfect elimination ordering.
+	\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}\frametitle{Finding a Perfect Elimination Ordering}
+	\begin{block}{Main Theorem}
+		If G is chordal, any LexBFS ordering taken backward is a PEO.
+	\end{block}
+
+	\textbf{Proof:}
+
+	c : non simplicial vertex
+
+	Thus $\exists a <_{\sigma} b \in N(c)\text{ with }ab \notin E$
+
+	$\sigma$ is a LexBFS thus $\exists d <_{\sigma} a\text{ with }db \in E, dc \notin E$
+
+	$G$ is chordal, so $ad \notin E$
+\end{frame}
+
+\begin{frame}\frametitle{Ending the proof}
+
+    \begin{center}
+    \begin{tikzpicture}
+	\draw [dashed] (0,0) arc (120:60:6) ;
+	\draw (0,0) arc (120:60:4) ;
+	\draw (2,0) arc (120:60:4) ;
+	\draw [dashed] (0,0) -- (2,0) ;
+	\draw [dashed] (2,0) -- (4,0);
+	\draw (4,0) -- (6,0) ;
+
+	\draw (0,0) node[circle, fill=gray!20]{$d$} ;
+	\draw (2,0) node[circle, fill=gray!20]{$a$} ;
+	\draw (4,0) node[circle, fill=gray!20]{$b$} ;
+	\draw (6,0) node[circle, fill=gray!20]{$c$} ;
+    \end{tikzpicture}
+    \end{center}
+
+    \begin{itemize}
+	\item \textbf{Initialization:} $(d, a, b)$ such that $da \notin E, ab \notin E, db \in E$
+	\item \textbf{General Case:} $\exists d' <_{\sigma} d\text{ with }d'a \in E, d'b \notin E\text{ so }d'd \notin E$.
+	\item Using the triple $(d', d, a)$, infinite chain.
+    \end{itemize}
+
+\end{frame}
+
+
 
 \end{document}
