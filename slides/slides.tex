@@ -50,14 +50,17 @@
 	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E\text{ and }ab \notin E, \exists d <_{\sigma} b\text{ st }db \in E$$
     \end{theorem}
     \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}  
+
 	\draw (0,1) arc (120:60:4) ;
 	\draw [dashed] (0,1) -- (2,1);
 	\draw (0,0) -- (2,1);
-	\draw (0,0) node[below]{$d$} ;
-	\draw (0,1) node[below]{$a$} ;
-	\draw (2,1) node[below]{$b$} ;
-	\draw (4,1) node[below]{$c$} ;
+	\draw (0,0) node[circle, fill=blue!20]{$d$} ;
+	\draw (0,1) node[circle, fill=gray!20]{$a$} ;
+	\draw (2,1) node[circle, fill=gray!20]{$b$} ;
+	\draw (4,1) node[circle, fill=gray!20]{$c$} ;
+
+
 	\draw [dotted] (1,-0.5) -- (1,1.5);
 	\draw [dotted] (3,-0.5) -- (3,1.5);
 	\draw (1,-0.5) node[below]{$<$} ;
@@ -92,10 +95,13 @@
 	\draw (2,0) -- (4,0);
 	\draw [dashed] (0,0) arc (120:60:4) ;
 
-	\draw (0,0) node[below]{$a$} ;
-	\draw (2,0) node[below]{$d$} ;
-	\draw (4,0) node[below]{$b$} ;
-	\draw (6,0) node[below]{$c$} ;
+	\draw (0,0) node[circle, fill=gray!20]{$a$} ;
+	\draw (2,0) node[circle, fill=blue!20]{$d$} ;
+	\draw (4,0) node[circle, fill=gray!20]{$b$} ;
+	\draw (6,0) node[circle, fill=gray!20]{$c$} ;
+
+
+
 
 	\draw [dotted] (1,-0.5) -- (1,1.5);
 	\draw [dotted] (3,-0.5) -- (3,1.5);
@@ -139,10 +145,10 @@
 	\draw (2,0) arc (120:60:4) ;
 	\draw [dashed] (2,0) -- (4,0);
 
-	\draw (0,0) node[below]{$d$} ;
-	\draw (2,0) node[below]{$a$} ;
-	\draw (4,0) node[below]{$b$} ;
-	\draw (6,0) node[below]{$c$} ;
+	\draw (0,0) node[circle, fill=blue!20]{$d$} ;
+	\draw (2,0) node[circle, fill=gray!20]{$a$} ;
+	\draw (4,0) node[circle, fill=gray!20]{$b$} ;
+	\draw (6,0) node[circle, fill=gray!20]{$c$} ;
 
 	\draw [dotted] (1,-0.5) -- (1,1.5);
 	\draw [dotted] (3,-0.5) -- (3,1.5);
@@ -192,6 +198,7 @@
         An order $\sigma$ corresponds to a LexBFS if and only if
 	    
 	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E\text{ and }ab \notin E, \exists d <_{\sigma} a\text{ st }db \in E\text{ and }dc \notin E$$
+	 
     \end{theorem}
 
     \begin{center}
@@ -201,10 +208,11 @@
 	\draw [dashed] (2,0) -- (4,0);
 	\draw [dashed] (0,0) arc (120:60:6) ;
 
-	\draw (0,0) node[below]{$d$} ;
-	\draw (2,0) node[below]{$a$} ;
-	\draw (4,0) node[below]{$b$} ;
-	\draw (6,0) node[below]{$c$} ;
+	\draw (0,0) node[circle, fill=blue!20]{$d$} ;
+	\draw (2,0) node[circle, fill=gray!20]{$a$} ;
+	\draw (4,0) node[circle, fill=gray!20]{$b$} ;
+	\draw (6,0) node[circle, fill=gray!20]{$c$} ;
+
 
 	\draw [dotted] (1,-0.5) -- (1,1.5);
 	\draw [dotted] (3,-0.5) -- (3,1.5);
@@ -231,10 +239,10 @@
 	\draw [dashed] (0,0) arc (120:60:4) ;
 	\draw [dashed] (2,0) arc (120:60:4) ;
 
-	\draw (0,0) node[below]{$a$} ;
-	\draw (2,0) node[below]{$d$} ;
-	\draw (4,0) node[below]{$b$} ;
-	\draw (6,0) node[below]{$c$} ;
+	\draw (0,0) node[circle, fill=gray!20]{$a$} ;
+	\draw (2,0) node[circle, fill=blue!20]{$d$} ;
+	\draw (4,0) node[circle, fill=gray!20]{$b$} ;
+	\draw (6,0) node[circle, fill=gray!20]{$c$} ;
 
 	\draw [dotted] (1,-0.5) -- (1,1.5);
 	\draw [dotted] (3,-0.5) -- (3,1.5);
@@ -245,8 +253,102 @@
 	\draw (5,-0.5) node[below]{$<$} ;
     \end{tikzpicture}
     \end{center}
+\end{frame}
+
+\begin{frame}\frametitle{How to implement LexBFS: Pivoting}
+    \only<1>{Let's order vertices by label :}
+    \only<2>{We remove one of the maximum vertex :}
+    \only<3>{Now, we split each bucket}
+    \only<1-2>{
+    \begin{center}
+    \begin{tikzpicture}
+	\draw (0,-2) node[circle, fill=black]{} ;
+	\draw (0,0) node[circle, fill=black]{} ;
+	\only<2>{\draw (0,0) node[circle, fill=purple]{} ;}
+	\draw (0,2) node[circle, fill=black]{} ;
+	\only<2>{\draw (0,2) node[circle, fill=purple]{} ;}
+
+	\draw (2,-1) node[circle, fill=black]{} ;
+	\draw (2,1) node[circle, fill=black]{} ;
+	\only<2>{\draw (2,1) node[circle, fill=purple]{} ;}
+
+	\draw (4,0) node[circle, fill=black]{} ;
+
+	\draw (6,-2) node[circle, fill=black]{} ;
+	\draw (6,0) node[circle, fill=black]{} ;
+	\draw (6,2) node[circle, fill=black]{} ;
+	\only<2>{\draw (6,2) node[circle, fill=purple]{} ;}
+
+	\only<1>{\draw (8,0) node[circle, fill=black]{} ;}
+
+
+
+	\draw [dotted] (1,-2.5) -- (1,2.5);
+	\draw (1,-2.5) node[below]{$<$} ;
+
+	\draw [dotted] (3,-2.5) -- (3,2.5);
+	\draw (3,-2.5) node[below]{$<$} ;
+
+	\draw [dotted] (5,-2.5) -- (5,2.5);
+	\draw (5,-2.5) node[below]{$<$} ;
+
+	\only<1>{\draw [dotted] (7,-2.5) -- (7,2.5);}
+	\only<1>{\draw (7,-2.5) node[below]{$<$} ;}
+    \end{tikzpicture}
+    \end{center}
+    }
+    \only<3>{
+    \begin{center}
+	    \begin{tikzpicture}[scale = 0.8]
+	\draw (0,0) node[circle, fill=black]{} ;
+
+	\draw (2,-1) node[circle, fill=purple]{} ;
+	\draw (2,1) node[circle, fill=purple]{} ;
+
+	\draw (4,0) node[circle, fill=black]{} ;
+
+	\draw (6,0) node[circle, fill=purple]{} ;
+
+	\draw (8,0) node[circle, fill=black]{} ;
+
+	\draw (10,-1) node[circle, fill=black]{} ;
+	\draw (10,1) node[circle, fill=black]{} ;
+
+	\draw (12,0) node[circle, fill=purple]{} ;
+
+
+
+
+	\draw [dotted] (1,-2.5) -- (1,2.5);
+	\draw (1,-2.5) node[below]{$<$} ;
+
+	\draw [dotted] (3,-2.5) -- (3,2.5);
+	\draw (3,-2.5) node[below]{$<$} ;
+
+	\draw [dotted] (5,-2.5) -- (5,2.5);
+	\draw (5,-2.5) node[below]{$<$} ;
+
+	\draw [dotted] (7,-2.5) -- (7,2.5);
+	\draw (7,-2.5) node[below]{$<$} ;
+
+	\draw [dotted] (9,-2.5) -- (9,2.5);
+	\draw (9,-2.5) node[below]{$<$} ;
+
+	\draw [dotted] (11,-2.5) -- (11,2.5);
+	\draw (11,-2.5) node[below]{$<$} ;
+    \end{tikzpicture}
+    \end{center}
+
+    }
 
 \end{frame}
 
+\begin{frame}\frametitle{Data structure for pivoting}
+\begin{itemize}
+    \item Vertices in a doubly linked list
+    \item Pointer from each vertex to its class
+    \item Pointers from each class to its first and last vertex
+\end{itemize}
+\end{frama} 
 
 \end{document}
