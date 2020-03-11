@@ -343,12 +343,73 @@
 
 \end{frame}
 
-\begin{frame}\frametitle{Data structure for pivoting}
-\begin{itemize}
-    \item Vertices in a doubly linked list
-    \item Pointer from each vertex to its class
-    \item Pointers from each class to its first and last vertex
-\end{itemize}
-\end{frama} 
+\begin{frame}[fragile]\frametitle{Data structure for pivoting}
+    \begin{itemize}
+        \item Vertices in a doubly linked list
+        \item Pointer from each vertex to its class
+        \item Pointers from each class to its first and last vertex
+    \end{itemize}
+    \begin{center}
+    \begin{tikzpicture}
+	\draw (1.5,1) node[circle, fill=red]{} ;
+	\draw (0,0) node[circle, fill=black]{} ;
+	\draw (1,0) node[circle, fill=black]{} ;
+	\draw (2,0) node[circle, fill=black]{} ;
+	\draw (3,0) node[circle, fill=black]{} ;
+
+	\draw [->,dashed] (0,0) -- (1.35,0.9) ;
+	\draw [->,dashed] (1,0) -- (1.45,0.8) ;
+	\draw [->,dashed] (2,0) -- (1.55,0.8) ;
+	\draw [->,dashed] (3,0) -- (1.65,0.9) ;
+
+	\draw [<-,dashed,red] (0.1,0.2) -- (1.25,0.9) ;
+	\draw [<-,dashed,red] (2.9,0.2) -- (1.75,0.9) ;
+
+	\draw (4.5,1) node[circle, fill=red]{} ;
+	\draw (4,0) node[circle, fill=black]{} ;
+	\draw (5,0) node[circle, fill=black]{} ;
+
+	\draw [->,dashed] (4,0) -- (4.45,0.8) ;
+	\draw [->,dashed] (5,0) -- (4.55,0.8) ;
+
+	\draw [<-,dashed,red] (4,0.2) -- (4.35,0.8) ;
+	\draw [<-,dashed,red] (5,0.2) -- (4.65,0.8) ;
+
+	\draw (7,1) node[circle, fill=red]{} ;
+	\draw (6,0) node[circle, fill=black]{} ;
+	\draw (7,0) node[circle, fill=black]{} ;
+	\draw (8,0) node[circle, fill=black]{} ;
+
+	\draw [->,dashed] (6,0) -- (6.9,0.9) ;
+	\draw [->,dashed] (7,0) -- (7,0.8) ;
+	\draw [->,dashed] (8,0) -- (7.1,0.9) ;
+
+	\draw [<-,dashed,red] (6,0.2) -- (6.8,0.9) ;
+	\draw [<-,dashed,red] (8,0.2) -- (7.2,0.9) ;
+
+
+	\draw [->] (0.2,0.1) -- (0.8,0.1) ;
+	\draw [->] (1.2,0.1) -- (1.8,0.1) ;
+	\draw [->] (2.2,0.1) -- (2.8,0.1) ;
+	\draw [->] (3.2,0.1) -- (3.8,0.1) ;
+	\draw [->] (4.2,0.1) -- (4.8,0.1) ;
+	\draw [->] (5.2,0.1) -- (5.8,0.1) ;
+	\draw [->] (6.2,0.1) -- (6.8,0.1) ;
+	\draw [->] (7.2,0.1) -- (7.8,0.1) ;
+
+	\draw [<-] (0.2,-0.1) -- (0.8,-0.1) ;
+	\draw [<-] (1.2,-0.1) -- (1.8,-0.1) ;
+	\draw [<-] (2.2,-0.1) -- (2.8,-0.1) ;
+	\draw [<-] (3.2,-0.1) -- (3.8,-0.1) ;
+	\draw [<-] (4.2,-0.1) -- (4.8,-0.1) ;
+	\draw [<-] (5.2,-0.1) -- (5.8,-0.1) ;
+	\draw [<-] (6.2,-0.1) -- (6.8,-0.1) ;
+	\draw [<-] (7.2,-0.1) -- (7.8,-0.1) ;
+
+
+    \end{tikzpicture}
+    \end{center}
+
+\end{frame} 
 
 \end{document}
