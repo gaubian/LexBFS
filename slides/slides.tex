@@ -123,7 +123,6 @@
 	        label[v] = i
     \end{lstlisting}
 
-
     INCLUDE GRAPH EXAMPLE
 \end{frame}
 
@@ -158,7 +157,6 @@
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Let's rewrite BFS}
-
     \begin{lstlisting}[language = Python]
     for i in [n, ..., 1]:
         if i == n:
@@ -170,8 +168,6 @@
 	for v in neighbours(u):
 	    label[v].append(i)
     \end{lstlisting}
-
-    INCLUDE GRAPH EXAMPLE
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Here is LexBFS}
@@ -220,5 +216,37 @@
     \end{tikzpicture}
     \end{center}
 \end{frame}
+
+\begin{frame}\frametitle{Another Characterization}
+    Iterating on [1, ..., n] and prepending, we obtain LexDFS
+    \begin{theorem}
+        An order $\sigma$ corresponds to a LexDFS if and only if
+	    
+	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E, ab \notin E, \exists a <_{\sigma} d <_{\sigma} b\text{ st }db \in E, dc \notin E$$
+    \end{theorem}
+    \begin{center}
+    \begin{tikzpicture}
+	\draw (0,0) arc (120:60:6) ;
+	\draw (2,0) -- (4,0);
+	\draw [dashed] (0,0) arc (120:60:4) ;
+	\draw [dashed] (2,0) arc (120:60:4) ;
+
+	\draw (0,0) node[below]{$a$} ;
+	\draw (2,0) node[below]{$d$} ;
+	\draw (4,0) node[below]{$b$} ;
+	\draw (6,0) node[below]{$c$} ;
+
+	\draw [dotted] (1,-0.5) -- (1,1.5);
+	\draw [dotted] (3,-0.5) -- (3,1.5);
+	\draw [dotted] (5,-0.5) -- (5,1.5);
+
+	\draw (1,-0.5) node[below]{$<$} ;
+	\draw (3,-0.5) node[below]{$<$} ;
+	\draw (5,-0.5) node[below]{$<$} ;
+    \end{tikzpicture}
+    \end{center}
+
+\end{frame}
+
 
 \end{document}
