@@ -78,16 +78,35 @@
 	for v in neighbours(u):
 	    label[v] = i
     \end{lstlisting}
-
-
 \end{frame}
 
 \begin{frame}\frametitle{Another Characterization}
-    Let's number vertices in the order they are visited.
     \begin{theorem}
-       An order $\sigma$ corresponds to a DFS if and only if
+        An order $\sigma$ corresponds to a DFS if and only if
+	    
+	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E\text{ and }ab \notin E, \exists a <_{\sigma} d <_{\sigma} b\text{ st }db \in E$$
     \end{theorem}
-    INCLUDE DRAWING
+    \begin{center}
+    \begin{tikzpicture}
+	\draw (0,0) arc (120:60:6) ;
+	\draw (2,0) -- (4,0);
+	\draw [dashed] (0,0) arc (120:60:4) ;
+
+	\draw (0,0) node[below]{$a$} ;
+	\draw (2,0) node[below]{$d$} ;
+	\draw (4,0) node[below]{$b$} ;
+	\draw (6,0) node[below]{$c$} ;
+
+	\draw [dotted] (1,-0.5) -- (1,1.5);
+	\draw [dotted] (3,-0.5) -- (3,1.5);
+	\draw [dotted] (5,-0.5) -- (5,1.5);
+
+	\draw (1,-0.5) node[below]{$<$} ;
+	\draw (3,-0.5) node[below]{$<$} ;
+	\draw (5,-0.5) node[below]{$<$} ;
+    \end{tikzpicture}
+    \end{center}
+
 \end{frame}
 
 
@@ -109,11 +128,33 @@
 \end{frame}
 
 \begin{frame}\frametitle{Another Characterization}
-    Let's number vertices in the order they are visited.
     \begin{theorem}
-       An order $\sigma$ corresponds to a BFS if and only if
+        An order $\sigma$ corresponds to a BFS if and only if
+	    
+	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E\text{ and }ab \notin E, \exists d <_{\sigma} a\text{ st }db \in E$$
     \end{theorem}
-    INCLUDE DRAWING
+
+    \begin{center}
+    \begin{tikzpicture}
+	\draw (0,0) arc (120:60:4) ;
+	\draw (2,0) arc (120:60:4) ;
+	\draw [dashed] (2,0) -- (4,0);
+
+	\draw (0,0) node[below]{$d$} ;
+	\draw (2,0) node[below]{$a$} ;
+	\draw (4,0) node[below]{$b$} ;
+	\draw (6,0) node[below]{$c$} ;
+
+	\draw [dotted] (1,-0.5) -- (1,1.5);
+	\draw [dotted] (3,-0.5) -- (3,1.5);
+	\draw [dotted] (5,-0.5) -- (5,1.5);
+
+	\draw (1,-0.5) node[below]{$<$} ;
+	\draw (3,-0.5) node[below]{$<$} ;
+	\draw (5,-0.5) node[below]{$<$} ;
+    \end{tikzpicture}
+    \end{center}
+
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Let's rewrite BFS}
@@ -151,86 +192,33 @@
 \end{frame}
 
 \begin{frame}\frametitle{Another Characterization}
-    Let's number vertices in the order they are visited.
     \begin{theorem}
-       An order $\sigma$ corresponds to a LexBFS if and only if
+        An order $\sigma$ corresponds to a LexBFS if and only if
+	    
+	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E\text{ and }ab \notin E, \exists d <_{\sigma} a\text{ st }db \in E\text{ and }dc \notin E$$
     \end{theorem}
-    INCLUDE DRAWING
+
+    \begin{center}
+    \begin{tikzpicture}
+	\draw (0,0) arc (120:60:4) ;
+	\draw (2,0) arc (120:60:4) ;
+	\draw [dashed] (2,0) -- (4,0);
+	\draw [dashed] (0,0) arc (120:60:6) ;
+
+	\draw (0,0) node[below]{$d$} ;
+	\draw (2,0) node[below]{$a$} ;
+	\draw (4,0) node[below]{$b$} ;
+	\draw (6,0) node[below]{$c$} ;
+
+	\draw [dotted] (1,-0.5) -- (1,1.5);
+	\draw [dotted] (3,-0.5) -- (3,1.5);
+	\draw [dotted] (5,-0.5) -- (5,1.5);
+
+	\draw (1,-0.5) node[below]{$<$} ;
+	\draw (3,-0.5) node[below]{$<$} ;
+	\draw (5,-0.5) node[below]{$<$} ;
+    \end{tikzpicture}
+    \end{center}
 \end{frame}
-
-\begin{frame}\frametitle{blocs}
-
-\begin{block}{title of the bloc}
-bloc text
-\end{block}
-
-\begin{exampleblock}{title of the bloc}
-bloc text
-\end{exampleblock}
-
-
-\begin{alertblock}{title of the bloc}
-bloc text
-\end{alertblock}
-\end{frame}
-
-\section{Section no. 5}
-\subsection{split screen}
-
-\begin{frame}\frametitle{splitting screen}
-\begin{columns}
-\begin{column}{5cm}
-\begin{itemize}
-\item Beamer 
-\item Beamer Class 
-\item Beamer Class Latex 
-\end{itemize}
-\end{column}
-\begin{column}{5cm}
-\begin{tabular}{|c|c|}
-\hline
-\textbf{Instructor} & \textbf{Title} \\
-\hline
-Sascha Frank &  \LaTeX \ Course 1 \\
-\hline
-Sascha Frank &  Course serial  \\
-\hline
-\end{tabular}
-\end{column}
-\end{columns}
-\end{frame}
-
-%\subsection{Pictures} 
-%\begin{frame}\frametitle{pictures in latex beamer class}
-%\begin{figure}
-%\includegraphics[scale=0.5]{PIC1} 
-%\caption{show an example picture}
-%\end{figure}
-%\end{frame}
-
-\subsection{joining picture and lists} 
-
-%\begin{frame}
-%\frametitle{pictures and lists in beamer class}
-%\begin{columns}
-%\begin{column}{5cm}
-%\begin{itemize}
-%\item<1-> subject 1
-%\item<3-> subject 2
-%\item<5-> subject 3
-%\end{itemize}
-%\vspace{3cm} 
-%\end{column}
-%\begin{column}{5cm}
-%\begin{overprint}
-%\includegraphics<2>{PIC1}
-%\includegraphics<4>{PIC2}
-%\includegraphics<6>{PIC3}
-%\end{overprint}
-%\end{column}
-%\end{columns}
-%\end{frame}
-
-
 
 \end{document}

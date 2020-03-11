@@ -1,3 +1,1 @@
 \beamer@sectionintoc {1}{Graph Searches}{3}{0}{1}
-\beamer@sectionintoc {2}{Section no. 5}{14}{0}{2}
-\beamer@subsectionintoc {2}{1}{split screen}{14}{0}{2}
