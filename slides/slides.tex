@@ -1,6 +1,8 @@
 \documentclass{beamer}
 \setbeamertemplate{navigation symbols}{}
 
+\usepackage{tikz}
+\usepackage{listings}
 
 \usetheme{Warsaw}
 
@@ -21,21 +23,23 @@
 
 \section{Graph Searches} 
 \begin{frame}\frametitle{What's in a graph ?}
-    \begin{block}
+    \begin{block}{Graph}
 	We consider non-oriented, simple and \textbf{connected} graphs
     \end{block}
     INCLUDE GRAPHS EXAMPLES AND COUNTEREXAMPLES
 \end{frame}
 
-\begin{frame}\frametitle{Generic Search}
-    INCLUDE GRAPH EXAMPLE
-    \begin{definition}
-    for i in {1, …, n}
-	let u an unvisited marked vertex (any vertex if i = 1)
-	visit u
-	for v in neighbours(u)
-	    mark v
-    \end{definition}
+\begin{frame}[fragile]\frametitle{Generic Search}
+    \begin{lstlisting}[language = Python]
+    for i in [1, ..., n]:
+        if i == 1:
+	    u = any vertex
+	else:
+	    u = any unvisited marked vertex
+	visit(u)
+	for v in neighbours(u):
+	    mark(v)
+    \end{lstlisting}
 \end{frame}
 
 \begin{frame}\frametitle{Another Characterization}
@@ -45,18 +49,37 @@
 	    
 	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E\text{ and }ab \notin E, \exists d <_{\sigma} b\text{ st }db \in E$$
     \end{theorem}
-    INCLUDE DRAWING
+    \begin{center}
+    \begin{tikzpicture}
+	\draw (0,1) arc (120:60:4) ;
+	\draw [dashed] (0,1) -- (2,1);
+	\draw (0,0) -- (2,1);
+	\draw (0,0) node[below]{$d$} ;
+	\draw (0,1) node[below]{$a$} ;
+	\draw (2,1) node[below]{$b$} ;
+	\draw (4,1) node[below]{$c$} ;
+	\draw [dotted] (1,-0.5) -- (1,1.5);
+	\draw [dotted] (3,-0.5) -- (3,1.5);
+	\draw (1,-0.5) node[below]{$<$} ;
+	\draw (3,-0.5) node[below]{$<$} ;
+    \end{tikzpicture}
+    \end{center}
 \end{frame}
 
-\begin{frame}\frametitle{DFS}
+\begin{frame}[fragile]\frametitle{DFS}
     INCLUDE GRAPH EXAMPLE
-    \begin{definition}
-    for i in {1, …, n}
-	u an unvisited vertex with maximum label (any vertex if i = 1)
-	visit u
-	for v in neighbours(u)
-	   label[v] = i
-    \end{definition}
+    \begin{lstlisting}[language = Python]
+    for i in [1, ..., n]:
+        if i == 1:
+	    u = any vertex
+	else:
+	    u = any unvisited vertex w/ max label
+	visit(u)
+	for v in neighbours(u):
+	    label[v] = i
+    \end{lstlisting}
+
+
 \end{frame}
 
 \begin{frame}\frametitle{Another Characterization}
@@ -68,15 +91,20 @@
 \end{frame}
 
 
-\begin{frame}\frametitle{BFS}
-    \begin{definition}
-    for i in {n, …, 1}
-	u an unvisited vertex with maximum label (any vertex if i = n)
-	visit u
-	for v in neighbours(u)
-	   if v has no label
-	       label[v] = i
-    \end{definition}
+\begin{frame}[fragile]\frametitle{BFS}
+    \begin{lstlisting}[language = Python]
+    for i in [n, ..., 1]:
+        if i == n:
+	    u = any vertex
+	else:
+	    u = any unvisited vertex w/ max label
+	visit(u)
+	for v in neighbours(u):
+	    if v has no label:
+	        label[v] = i
+    \end{lstlisting}
+
+
     INCLUDE GRAPH EXAMPLE
 \end{frame}
 
@@ -88,25 +116,37 @@
     INCLUDE DRAWING
 \end{frame}
 
-\begin{frame}\frametitle{Let's rewrite BFS}
-    \begin{definition}
-    for i in {n, …, 1}
-	let u an unvisited vertex with maximum first element of the label (any vertex if i = n)
-	visit u
-	for v in neighbours(u)
-	   append i to label[v]
-    \end{definition}
+\begin{frame}[fragile]\frametitle{Let's rewrite BFS}
+
+    \begin{lstlisting}[language = Python]
+    for i in [n, ..., 1]:
+        if i == n:
+	    u = any vertex
+	else:
+	    u = any unvisited vertex
+	        w/ max first element of label
+	visit(u)
+	for v in neighbours(u):
+	    label[v].append(i)
+    \end{lstlisting}
+
     INCLUDE GRAPH EXAMPLE
 \end{frame}
 
-\begin{frame}\frametitle{Here is LexBFS}
-    \begin{definition}
-    for i in {n, …, 1}
-	let u an unvisited vertex with lexicographical maximum label
-	visit u
-	for v in neighbours(u)
-	   append i to label[v]
-    \end{definition}
+\begin{frame}[fragile]\frametitle{Here is LexBFS}
+    \begin{lstlisting}[language = Python]
+    for i in [n, ..., 1]:
+        if i == n:
+	    u = any vertex
+	else:
+	    u = any unvisited vertex
+	        w/ max lexicographical label
+	visit(u)
+	for v in neighbours(u):
+	    label[v].append(i)
+    \end{lstlisting}
+
+	
     INCLUDE GRAPH EXAMPLE
 \end{frame}
 
