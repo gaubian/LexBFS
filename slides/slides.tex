@@ -20,22 +20,103 @@
 
 
 \section{Graph Searches} 
+\begin{frame}\frametitle{What's in a graph ?}
+    \begin{block}
+	We consider non-oriented, simple and \textbf{connected} graphs
+    \end{block}
+    INCLUDE GRAPHS EXAMPLES AND COUNTEREXAMPLES
+\end{frame}
+
 \begin{frame}\frametitle{Generic Search}
+    INCLUDE GRAPH EXAMPLE
     \begin{definition}
-        Start from some vertex. Visit vertices among neighbours of already visited vertices, until every vertex is visited.
+    for i in {1, …, n}
+	let u an unvisited marked vertex (any vertex if i = 1)
+	visit u
+	for v in neighbours(u)
+	    mark v
+    \end{definition}
+\end{frame}
+
+\begin{frame}\frametitle{Another Characterization}
+    Let's number vertices in the order they are visited.
+    \begin{theorem}
+        An order $\sigma$ corresponds to a Generic Search if and only if
+	    
+	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E\text{ and }ab \notin E, \exists d <_{\sigma} b\text{ st }db \in E$$
+    \end{theorem}
+    INCLUDE DRAWING
+\end{frame}
+
+\begin{frame}\frametitle{DFS}
+    INCLUDE GRAPH EXAMPLE
+    \begin{definition}
+    for i in {1, …, n}
+	u an unvisited vertex with maximum label (any vertex if i = 1)
+	visit u
+	for v in neighbours(u)
+	   label[v] = i
+    \end{definition}
+\end{frame}
+
+\begin{frame}\frametitle{Another Characterization}
+    Let's number vertices in the order they are visited.
+    \begin{theorem}
+       An order $\sigma$ corresponds to a DFS if and only if
+    \end{theorem}
+    INCLUDE DRAWING
+\end{frame}
+
+
+\begin{frame}\frametitle{BFS}
+    \begin{definition}
+    for i in {n, …, 1}
+	u an unvisited vertex with maximum label (any vertex if i = n)
+	visit u
+	for v in neighbours(u)
+	   if v has no label
+	       label[v] = i
     \end{definition}
     INCLUDE GRAPH EXAMPLE
 \end{frame}
 
 \begin{frame}\frametitle{Another Characterization}
-    Let's number vertices in the order there are visited.
-    \begin{definition}
-       An order $\sigma$ corresponds to a LexBFS if and only if
-    \end{definition}
+    Let's number vertices in the order they are visited.
+    \begin{theorem}
+       An order $\sigma$ corresponds to a BFS if and only if
+    \end{theorem}
     INCLUDE DRAWING
 \end{frame}
 
+\begin{frame}\frametitle{Let's rewrite BFS}
+    \begin{definition}
+    for i in {n, …, 1}
+	let u an unvisited vertex with maximum first element of the label (any vertex if i = n)
+	visit u
+	for v in neighbours(u)
+	   append i to label[v]
+    \end{definition}
+    INCLUDE GRAPH EXAMPLE
+\end{frame}
 
+\begin{frame}\frametitle{Here is LexBFS}
+    \begin{definition}
+    for i in {n, …, 1}
+	let u an unvisited vertex with lexicographical maximum label
+	visit u
+	for v in neighbours(u)
+	   append i to label[v]
+    \end{definition}
+    INCLUDE GRAPH EXAMPLE
+\end{frame}
+
+\begin{frame}\frametitle{Another Characterization}
+    Let's number vertices in the order they are visited.
+    \begin{theorem}
+       An order $\sigma$ corresponds to a LexBFS if and only if
+    \end{theorem}
+    INCLUDE DRAWING
+\end{frame}
 
 \begin{frame}\frametitle{blocs}
 
