@@ -34,7 +34,29 @@
     \begin{block}{Graph}
 	We consider non-oriented, simple and \textbf{connected} graphs
     \end{block}
-    INCLUDE GRAPHS EXAMPLES AND COUNTEREXAMPLES
+
+    \begin{center}
+    \begin{tikzpicture}  
+
+	\draw (0,0) -- (0,2);
+	\draw (0,0) -- (2,0);
+	\draw (2,2) -- (0,2);
+	\draw (2,2) -- (2,0);
+	\draw (2,2) -- (3,1);
+	\draw (2,0) -- (3,1);
+	\draw (0,2) -- (0,3);
+
+	\draw (0,0) node[circle, fill=gray]{$e$} ;
+	\draw (2,0) node[circle, fill=gray]{$f$} ;
+	\draw (0,2) node[circle, fill=gray]{$b$} ;
+	\draw (2,2) node[circle, fill=gray]{$c$} ;
+	\draw (3,1) node[circle, fill=gray]{$d$} ;
+	\draw (0,3) node[circle, fill=gray]{$a$} ;
+
+
+    \end{tikzpicture}
+    \end{center}
+
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Generic Search}
@@ -50,10 +72,74 @@
     \end{lstlisting}
 \end{frame}
 
+\begin{frame}\frametitle{Example of generic search}
+    \begin{center}
+    \begin{tikzpicture}  
+
+	\draw (0,0) -- (0,2);
+	\draw (0,0) -- (2,0);
+	\draw (2,2) -- (0,2);
+	\draw (2,2) -- (2,0);
+	\draw (2,2) -- (3,1);
+	\draw (2,0) -- (3,1);
+	\draw (0,2) -- (0,3);
+
+	\draw (0,0) node[circle, fill=gray]{$e$} ;
+	\draw (2,0) node[circle, fill=gray]{$f$} ;
+	\draw (0,2) node[circle, fill=gray]{$b$} ;
+	\draw (2,2) node[circle, fill=gray]{$c$} ;
+	\draw (3,1) node[circle, fill=gray]{$d$} ;
+	\draw (0,3) node[circle, fill=gray]{$a$} ;
+
+	\only<1-6>{
+	\draw (0,0) node[circle, fill=orange]{$e$} ;
+	}
+	\only<3-6>{
+	\draw (0,0) node[circle, fill=red]{$e$} ;
+	}
+
+	\only<1-6>{
+	\draw (2,0) node[circle, fill=red]{$f$} ;
+	}
+
+	\only<2-6>{
+	\draw (0,2) node[circle, fill=orange]{$b$} ;
+	}
+	\only<4-6>{
+	\draw (0,2) node[circle, fill=red]{$b$} ;
+
+	}
+
+	\only<1-6>{
+	\draw (2,2) node[circle, fill=orange]{$c$} ;
+	}
+	\only<2-6>{
+	\draw (2,2) node[circle, fill=red]{$c$} ;
+	}
+
+	\only<1-6>{
+	\draw (3,1) node[circle, fill=orange]{$d$} ;
+	}
+	\only<5-6>{
+	\draw (3,1) node[circle, fill=red]{$d$} ;
+	}
+
+	\only<4-6>{
+	\draw (0,3) node[circle, fill=orange]{$a$} ;
+	}
+	\only<6-6>{
+	\draw (0,3) node[circle, fill=red]{$a$} ;
+	}
+
+    \end{tikzpicture}
+    \end{center}
+
+\end{frame}
+
 \begin{frame}\frametitle{Another Characterization}
     Let's number vertices in the order they are visited.
     \begin{theorem}
-        An order $\sigma$ corresponds to a Generic Search if and only if
+        An ordering $\sigma$ corresponds to a Generic Search if and only if
 	    
 	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E\text{ and }ab \notin E, \exists d <_{\sigma} b\text{ st }db \in E$$
     \end{theorem}
@@ -77,8 +163,10 @@
     \end{center}
 \end{frame}
 
+
+
+
 \begin{frame}[fragile]\frametitle{DFS}
-    INCLUDE GRAPH EXAMPLE
     \begin{lstlisting}[language = Python]
     for i in [1, ..., n]:
         if i == 1:
@@ -91,9 +179,74 @@
     \end{lstlisting}
 \end{frame}
 
+\begin{frame}[fragile]\frametitle{DFS example}
+    \begin{center}
+    \begin{tikzpicture}  
+
+	\draw (0,0) -- (0,2);
+	\draw (0,0) -- (2,0);
+	\draw (2,2) -- (0,2);
+	\draw (2,2) -- (2,0);
+	\draw (2,2) -- (3,1);
+	\draw (2,0) -- (3,1);
+	\draw (0,2) -- (0,3);
+
+	\draw (0,0) node[circle, fill=gray]{$e$} ;
+	\draw (2,0) node[circle, fill=gray]{$f$} ;
+	\draw (0,2) node[circle, fill=gray]{$b$} ;
+	\draw (2,2) node[circle, fill=gray]{$c$} ;
+	\draw (3,1) node[circle, fill=gray]{$d$} ;
+	\draw (0,3) node[circle, fill=gray]{$a$} ;
+
+	\only<1-6>{
+	\draw (0,0) node[circle, fill=orange]{$e$} ;
+	}
+	\only<5-6>{
+	\draw (0,0) node[circle, fill=red]{$e$} ;
+	}
+
+	\only<1-6>{
+	\draw (2,0) node[circle, fill=red]{$f$} ;
+	}
+
+	\only<3-6>{
+	\draw (0,2) node[circle, fill=orange]{$b$} ;
+	}
+	\only<4-6>{
+	\draw (0,2) node[circle, fill=red]{$b$} ;
+
+	}
+
+	\only<1-6>{
+	\draw (2,2) node[circle, fill=orange]{$c$} ;
+	}
+	\only<3-6>{
+	\draw (2,2) node[circle, fill=red]{$c$} ;
+	}
+
+	\only<1-6>{
+	\draw (3,1) node[circle, fill=orange]{$d$} ;
+	}
+	\only<2-6>{
+	\draw (3,1) node[circle, fill=red]{$d$} ;
+	}
+
+	\only<4-6>{
+	\draw (0,3) node[circle, fill=orange]{$a$} ;
+	}
+	\only<6-6>{
+	\draw (0,3) node[circle, fill=red]{$a$} ;
+	}
+
+    \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+
+
 \begin{frame}\frametitle{Another Characterization}
     \begin{theorem}
-        An order $\sigma$ corresponds to a DFS if and only if
+        An ordering $\sigma$ corresponds to a DFS if and only if
 	    
 	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E\text{ and }ab \notin E, \exists a <_{\sigma} d <_{\sigma} b\text{ st }db \in E$$
     \end{theorem}
@@ -136,13 +289,79 @@
 	    if v has no label:
 	        label[v] = i
     \end{lstlisting}
-
-    INCLUDE GRAPH EXAMPLE
 \end{frame}
+
+
+\begin{frame}[fragile]\frametitle{BFS example}
+
+    \begin{center}
+    \begin{tikzpicture}  
+
+	\draw (0,0) -- (0,2);
+	\draw (0,0) -- (2,0);
+	\draw (2,2) -- (0,2);
+	\draw (2,2) -- (2,0);
+	\draw (2,2) -- (3,1);
+	\draw (2,0) -- (3,1);
+	\draw (0,2) -- (0,3);
+
+	\draw (0,0) node[circle, fill=gray]{$e$} ;
+	\draw (2,0) node[circle, fill=gray]{$f$} ;
+	\draw (0,2) node[circle, fill=gray]{$b$} ;
+	\draw (2,2) node[circle, fill=gray]{$c$} ;
+	\draw (3,1) node[circle, fill=gray]{$d$} ;
+	\draw (0,3) node[circle, fill=gray]{$a$} ;
+
+	\only<1-6>{
+	\draw (0,0) node[circle, fill=orange]{$e$} ;
+	}
+	\only<4-6>{
+	\draw (0,0) node[circle, fill=red]{$e$} ;
+	}
+
+	\only<1-6>{
+	\draw (2,0) node[circle, fill=red]{$f$} ;
+	}
+
+	\only<3-6>{
+	\draw (0,2) node[circle, fill=orange]{$b$} ;
+	}
+	\only<5-6>{
+	\draw (0,2) node[circle, fill=red]{$b$} ;
+
+	}
+
+	\only<1-6>{
+	\draw (2,2) node[circle, fill=orange]{$c$} ;
+	}
+	\only<3-6>{
+	\draw (2,2) node[circle, fill=red]{$c$} ;
+	}
+
+	\only<1-6>{
+	\draw (3,1) node[circle, fill=orange]{$d$} ;
+	}
+	\only<2-6>{
+	\draw (3,1) node[circle, fill=red]{$d$} ;
+	}
+
+	\only<5-6>{
+	\draw (0,3) node[circle, fill=orange]{$a$} ;
+	}
+	\only<6-6>{
+	\draw (0,3) node[circle, fill=red]{$a$} ;
+	}
+
+    \end{tikzpicture}
+    \end{center}
+
+
+\end{frame}
+
 
 \begin{frame}\frametitle{Another Characterization}
     \begin{theorem}
-        An order $\sigma$ corresponds to a BFS if and only if
+        An ordering $\sigma$ corresponds to a BFS if and only if
 	    
 	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E\text{ and }ab \notin E, \exists d <_{\sigma} a\text{ st }db \in E$$
     \end{theorem}
@@ -196,14 +415,79 @@
 	for v in neighbours(u):
 	    label[v].append(i)
     \end{lstlisting}
-
-	
-    INCLUDE GRAPH EXAMPLE
 \end{frame}
+
+\begin{frame}[fragile]\frametitle{LexBFS example}
+
+    \begin{center}
+    \begin{tikzpicture}  
+
+	\draw (0,0) -- (0,2);
+	\draw (0,0) -- (2,0);
+	\draw (2,2) -- (0,2);
+	\draw (2,2) -- (2,0);
+	\draw (2,2) -- (3,1);
+	\draw (2,0) -- (3,1);
+	\draw (0,2) -- (0,3);
+
+	\draw (0,0) node[circle, fill=gray]{$e$} ;
+	\draw (2,0) node[circle, fill=gray]{$f$} ;
+	\draw (0,2) node[circle, fill=gray]{$b$} ;
+	\draw (2,2) node[circle, fill=gray]{$c$} ;
+	\draw (3,1) node[circle, fill=gray]{$d$} ;
+	\draw (0,3) node[circle, fill=gray]{$a$} ;
+
+	\only<1-6>{
+	\draw (0,0) node[circle, fill=orange]{$e$} ;
+	}
+	\only<4-6>{
+	\draw (0,0) node[circle, fill=red]{$e$} ;
+	}
+
+	\only<1-6>{
+	\draw (2,0) node[circle, fill=red]{$f$} ;
+	}
+
+	\only<3-6>{
+	\draw (0,2) node[circle, fill=orange]{$b$} ;
+	}
+	\only<5-6>{
+	\draw (0,2) node[circle, fill=red]{$b$} ;
+
+	}
+
+	\only<1-6>{
+	\draw (2,2) node[circle, fill=orange]{$c$} ;
+	}
+	\only<3-6>{
+	\draw (2,2) node[circle, fill=red]{$c$} ;
+	}
+
+	\only<1-6>{
+	\draw (3,1) node[circle, fill=orange]{$d$} ;
+	}
+	\only<2-6>{
+	\draw (3,1) node[circle, fill=red]{$d$} ;
+	}
+
+	\only<5-6>{
+	\draw (0,3) node[circle, fill=orange]{$a$} ;
+	}
+	\only<6-6>{
+	\draw (0,3) node[circle, fill=red]{$a$} ;
+	}
+
+    \end{tikzpicture}
+    \end{center}
+
+
+\end{frame}
+
+
 
 \begin{frame}\frametitle{Another Characterization}
     \begin{theorem}
-        An order $\sigma$ corresponds to a LexBFS if and only if
+        An ordering $\sigma$ corresponds to a LexBFS if and only if
 	    
 	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E\text{ and }ab \notin E, \exists d <_{\sigma} a\text{ st }db \in E\text{ and }dc \notin E$$
 	 
@@ -236,7 +520,7 @@
 \begin{frame}\frametitle{Another Characterization}
     Iterating on [1, ..., n] and prepending, we obtain LexDFS
     \begin{theorem}
-        An order $\sigma$ corresponds to a LexDFS if and only if
+        An ordering $\sigma$ corresponds to a LexDFS if and only if
 	    
 	    $$\forall a <_{\sigma} b <_{\sigma} c, ac \in E, ab \notin E, \exists a <_{\sigma} d <_{\sigma} b\text{ st }db \in E, dc \notin E$$
     \end{theorem}
