@@ -504,4 +504,18 @@
      \end{alertblock}
 \end{frame}
 
+
+\begin{frame}[fragile]\frametitle{Verify if an ordering is a PEO}
+    \begin{lstlisting}[language = Python]
+    for x in vertices:
+	RN[x] = neighborstotheright(x)
+	parent[x] = leftmost(RN[x])
+    T = treefrompointers(parent)
+    for x in T in postorder:
+	if (RN[x] \ x) not included in RN[parent[x]]:
+	    return False
+    return True
+    \end{lstlisting}
+\end{frame}
+
 \end{document}
