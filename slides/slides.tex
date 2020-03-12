@@ -516,6 +516,22 @@
 	    return False
     return True
     \end{lstlisting}
+    
+    \begin{block}{Corollary}
+	Recognizing chordal graphs can be done in linear time.
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Easily adaptable for co-chordal}
+    Easily adapted for running on the complementary :
+	\begin{itemize}
+	     \item parent[x] = leftmost non-neighbor to the right of x
+             \item check if RN[parent[x]] is included in RN[x]
+	\end{itemize}
+
+    \begin{block}{Corollary}
+	Recognizing co-chordal graphs can be done in linear time.
+    \end{block}
 \end{frame}
 
 \end{document}
