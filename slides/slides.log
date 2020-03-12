@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.16)  12 MAR 2020 03:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.16)  12 MAR 2020 03:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -955,7 +955,15 @@ thkerncmss.
 )
 [3
 
-] [4
+]
+<screenshot.png, id=52, 515.9275pt x 81.30376pt>
+File: screenshot.png Graphic file (type png)
+<use screenshot.png>
+Package pdftex.def Info: screenshot.png  used on input line 43.
+(pdftex.def)             Requested size: 257.96312pt x 40.65176pt.
+ [4
+
+ <./screenshot.png>] [5
 
 ]
 \openout4 = `slides.vrb'.
@@ -963,14 +971,12 @@ thkerncmss.
  (./slides.vrb
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
-)) [5
+)) [6
 
-] [6
+] [7
 
 ]
-[7
-
-] [8
+[8
 
 ] [9
 
@@ -980,6 +986,8 @@ File: lstlang1.sty 2019/02/27 1.8b listings language file
 
 ] [12
 
+] [13
+
 ]
 \openout4 = `slides.vrb'.
 
@@ -988,25 +996,25 @@ Overfull \hbox (14.64348pt too wide) in paragraph at lines 7--8
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-) [13
+) [14
 
 ]
 \openout4 = `slides.vrb'.
 
- (./slides.vrb) [14
-
-] (./slides.vrb) [15
+ (./slides.vrb) [15
 
 ] (./slides.vrb) [16
 
-]
-(./slides.vrb) [17
+] (./slides.vrb) [17
 
-] (./slides.vrb) [18
+]
+(./slides.vrb) [18
 
 ] (./slides.vrb) [19
 
-] [20
+] (./slides.vrb) [20
+
+] [21
 
 ]
 \openout4 = `slides.vrb'.
@@ -1016,30 +1024,25 @@ Overfull \hbox (14.64348pt too wide) in paragraph at lines 7--8
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-) [21
+) [22
 
 ]
 \openout4 = `slides.vrb'.
 
- (./slides.vrb) [22
-
-] (./slides.vrb) [23
+ (./slides.vrb) [23
 
 ] (./slides.vrb) [24
 
-]
-(./slides.vrb) [25
+] (./slides.vrb) [25
 
-] (./slides.vrb) [26
+]
+(./slides.vrb) [26
 
 ] (./slides.vrb) [27
 
-] [28
+] (./slides.vrb) [28
 
-]
-\openout4 = `slides.vrb'.
-
- (./slides.vrb) [29
+] [29
 
 ]
 \openout4 = `slides.vrb'.
@@ -1051,7 +1054,10 @@ Overfull \hbox (14.64348pt too wide) in paragraph at lines 7--8
 
  (./slides.vrb) [31
 
-] (./slides.vrb) [32
+]
+\openout4 = `slides.vrb'.
+
+ (./slides.vrb) [32
 
 ] (./slides.vrb) [33
 
@@ -1061,23 +1067,23 @@ Overfull \hbox (14.64348pt too wide) in paragraph at lines 7--8
 
 ] (./slides.vrb) [36
 
-] [37
+] (./slides.vrb) [37
+
+] [38
 
 ]
-[38
-
-] [39
+[39
 
 ] [40
 
 ] [41
 
+] [42
+
 ]
 \openout4 = `slides.vrb'.
 
- (./slides.vrb) [42
-
-] [43
+ (./slides.vrb) [43
 
 ] [44
 
@@ -1086,6 +1092,8 @@ Overfull \hbox (14.64348pt too wide) in paragraph at lines 7--8
 ] [46
 
 ] [47
+
+] [48
 
 ]
 \openout4 = `slides.vrb'.
@@ -1104,12 +1112,12 @@ Overfull \hbox (40.92375pt too wide) in paragraph at lines 8--9
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [48
+) [49
 
 ]
 \openout4 = `slides.vrb'.
 
- (./slides.vrb) [49
+ (./slides.vrb) [50
 
 ]
 \tf@nav=\write6
@@ -1121,11 +1129,11 @@ Overfull \hbox (40.92375pt too wide) in paragraph at lines 8--9
 \tf@snm=\write8
 \openout8 = `slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 829.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 829.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 841.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 841.
  (./slides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 829.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 829.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 841.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 841.
 Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1134,13 +1142,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 22404 strings out of 492609
- 429887 string characters out of 6131462
- 695595 words of memory out of 5000000
- 25698 multiletter control sequences out of 15000+600000
+ 22416 strings out of 492609
+ 430031 string characters out of 6131462
+ 695744 words of memory out of 5000000
+ 25706 multiletter control sequences out of 15000+600000
  17901 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,15n,65p,813b,1343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,15n,59p,813b,1343s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texli
@@ -1153,10 +1161,10 @@ blic/amsfonts/cm/cmssi17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy8.pfb>
-Output written on slides.pdf (49 pages, 186875 bytes).
+Output written on slides.pdf (50 pages, 200883 bytes).
 PDF statistics:
- 415 PDF objects out of 1000 (max. 8388607)
- 332 compressed objects within 4 object streams
- 99 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 424 PDF objects out of 1000 (max. 8388607)
+ 338 compressed objects within 4 object streams
+ 101 named destinations out of 1000 (max. 500000)
+ 102 words of extra memory for PDF output out of 10000 (max. 10000000)
 
